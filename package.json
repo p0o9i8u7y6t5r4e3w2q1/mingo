@@ -2,7 +2,7 @@
   "name": "mingo",
   "version": "3.0.2",
   "description": "JavaScript implementation of MongoDB query language",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "module": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
@@ -28,11 +28,9 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "dependencies": {
-    "esm": "3.2.25"
-  },
   "devDependencies": {
     "codecov": "3.7.0",
+    "esm": "3.2.25",
     "lodash": "4.17.19",
     "nyc": "15.1.0",
     "perf_hooks": "0.0.1",

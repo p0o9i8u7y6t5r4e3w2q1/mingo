@@ -8,12 +8,6 @@ const LIB_DIR = path.resolve('lib')
 
 const CMD = process.argv.slice(2).join(' ')
 
-const MAIN_JS_FILE = 'main.js'
-const MAIN_JS_DATA = [
-  'require = require("esm")(module/*, options*/)',
-  'module.exports = require("./index.js")'
-].join('\n')
-
 // files to cleanup to avoid packing
 const CLEANUP_FILES = [
   'node_modules',
@@ -59,11 +53,8 @@ function prepare() {
     '**/*.ts'
   ])
 
-  // write main entry files using esm
-  fs.writeFileSync(path.join(LIB_DIR, MAIN_JS_FILE), MAIN_JS_DATA)
-
   // override entry files
-  packageJson.main = MAIN_JS_FILE
+  packageJson.main = 'index.js'
   packageJson.module = 'index.js'
   packageJson.typings = 'index.d.ts'
 
